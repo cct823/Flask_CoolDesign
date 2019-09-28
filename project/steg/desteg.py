@@ -33,9 +33,9 @@ def steg_message(filename,message):
     # convert string to binary code
     s = [bin(ord(ch))[2:].zfill(8) for ch in msg]
     s.append('00000000')  # where to stop
-    print(s)
+    # print(s)
 
-    print('first part done! ')
+    # print('first part done! ')
     # add all the binary code to a list
     # msgl = []
     # for i in range(len(s)):
@@ -44,7 +44,7 @@ def steg_message(filename,message):
     #         msgl.append(num)
     msgl = ''.join(s)
 
-    print('second part done!')
+    # print('second part done!')
     # print('original image',b[:152])
     for k in range(len(msgl)):
         ''' check if the number is the same, if not replace it.'''
@@ -56,7 +56,7 @@ def steg_message(filename,message):
             else:
                 b[k] -= 1
     # print(b[:len(msgl)])
-    print('third part done')
+    # print('third part done')
     STOP = len(msgl)+1
     # print(STOP)
     c = 0
@@ -78,8 +78,8 @@ def steg_message(filename,message):
     # currentpath = os.getcwd()
     cv.imwrite(st, out_img)
     # cv.imwrite("out_image30.png", out_img)
-    print('All done')
-    print(st)
+    # print('All done')
+    # print(st)
     return st.split('/')[-1]
 
 
