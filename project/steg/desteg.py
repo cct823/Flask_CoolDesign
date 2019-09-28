@@ -87,7 +87,7 @@ def desteg(filename):
     ### ========== TODO : START ========== ###
     # problem a
     # be sure to include a better docstring here!
-    print('this is',filename)
+    # print('this is',filename)
     img = file_in(filename)
     S = ''
 
