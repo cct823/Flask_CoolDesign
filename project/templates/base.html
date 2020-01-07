@@ -1,25 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <head>
-{#        if statement make sure there is title when you forget to return title in route.py#}
-        {% if title %}
-        <title>{{ title }} - IST341_Flask Project</title>
-        {% else %}
-        <title> Welcome to IST341_Flask Project</title>
-        {% endif %}
+<head>
+    <title>Flask App Project</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" /> -->
+    <link rel="stylesheet" href="../static/css/base.css" />
 
-    </head>
-    <body>
-        <div>IST341:
+</head>
+
+<body>
+    <header>
+        <h1>Welcome To Flask App Project For IST341 </h1>
+        <nav>
             <a href="/index">Home</a>
             <a href="/printRect">ASCII Art</a>
             <a href="/desteg">Steganography</a>
             <a href="/image">Convert Image</a>
-            <a href="/sleepwalk">Sleep Walk</a>
             <a href="/countalpha">Count Letters</a>
-        </div>
+        </nav>
+    </header>
 
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
+    {% block content %}{% endblock %}
+</body>
+
 </html>
