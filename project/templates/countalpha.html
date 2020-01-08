@@ -3,10 +3,17 @@
 {% block content %}
  <!doctype html>
 {#    <title>Steganography</title>#}
-    <h1>Count Letters </h1>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/count.css') }}" />
+  <!-- <link rel="stylesheet" href="../static/css/count.css"/> -->
+</head>
+
+<body>
+    <h2>Count Letters </h2>
     <p>Upload a text file and the program will count how many time each letter appears</p>
     <form  method=post enctype=multipart/form-data>
       <input type=file name=file>
       <input type=submit value=Upload>
     </form>
-    {% endblock %}
+  </body>
+{% endblock %}
