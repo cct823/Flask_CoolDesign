@@ -14,7 +14,7 @@ def printRect():
         output = ascii_art.printRect(width,height,symbol)
         # print(output)
         return render_template('ASCII_Results.html', title='ASCII Result', output=output)
-    return render_template('ascii_art.html', title='ASCII arts', user=user)
+    return render_template('Ascii_Art.html', title='ASCII arts', user=user)
 
 # Section Section
 @arts.route('/printTriangle', methods=['POST'])
