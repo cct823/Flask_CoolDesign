@@ -13,12 +13,12 @@ UPLOAD__IMAGE_FOLDER = '..'
 
 steg = Blueprint('steg', __name__)
 
-APP_ROOT= os.path.dirname(os.path.abspath(__file__))
+Image_Folder= os.path.dirname(os.path.abspath(__file__))+'/images'
 
 # Used for uploading pictures
 @steg.route('/<filename>')
 def get_file(filename):
-    return send_from_directory('steg/images',filename)
+    return send_from_directory(Image_Folder,filename)
 
 
 # invert images
@@ -40,7 +40,7 @@ def invert_file():
             filename = secure_filename(file.filename)
             # Create a path to the image in the upload folder, save the upload
             # file to this path
-            save_old=(os.path.join(project.config['UPLOAD__IMAGE_FOLDER'], filename))
+            save_old=(os.path.join(Image_Folder, filename))
             file.save(save_old)
             # print('this is:', save_old)
             # Take the image, make a new one that is inverted
@@ -48,7 +48,7 @@ def invert_file():
             rbg_img = img.convert('RGB')
             inverted_image = PIL.ImageOps.invert(rbg_img)
 
-            save_new=(os.path.join(project.config['UPLOAD__IMAGE_FOLDER'], 'new_'+filename))
+            save_new=(os.path.join(Image_Folder, 'new_'+filename))
             inverted_image.save(save_new)
             # Render template with inverted picture
             # rt = render_template('imageResults.html', filename='new_'+filename)
@@ -78,7 +78,7 @@ def steg_file():
             filename = secure_filename(file.filename)
             # Create a path to the image in the upload folder, save the upload
             # file to this path
-            save_old=(os.path.join(project.config['UPLOAD__IMAGE_FOLDER'], filename))
+            save_old=(os.path.join(Image_Folder, filename))
             file.save(save_old)
             # print('this is:', save_old)
             # read the image by using opencv
@@ -113,7 +113,7 @@ def desteg_file():
             filename = secure_filename(file.filename)
             # Create a path to the image in the upload folder, save the upload
             # file to this path
-            save_old=(os.path.join(project.config['UPLOAD__IMAGE_FOLDER'], filename))
+            save_old=(os.path.join(Image_Folder, filename))
             file.save(save_old)
             # print('this is:', save_old)
             # read the image by using opencv
@@ -130,7 +130,7 @@ def desteg_file():
 
 '''If there are multiple upload folder,s extensions cound't be the same'''
 # allowed file types
-IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+IMAGE_EXTENSIONS = {'png'}
 project.config['IMAGE_EXTENSIONS']=IMAGE_EXTENSIONS
 
 # is file allowed to be uploaded?

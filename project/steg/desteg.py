@@ -5,6 +5,7 @@ import os
 ######################################################################
 # functions
 ######################################################################
+Image_Folder= os.path.dirname(os.path.abspath(__file__))+'/images'
 
 def file_in(filename):
 
@@ -74,7 +75,7 @@ def steg_message(filename,message):
 
     out_img = file_out(img)
     # TODO: how to select to images folder?!
-    st = os.path.join('./project/steg/images', str('new_'+filename.split('/')[-1]))
+    st = os.path.join(Image_Folder, str('new_'+filename.split('/')[-1]))
     # currentpath = os.getcwd()
     cv.imwrite(st, out_img)
     # cv.imwrite("out_image30.png", out_img)

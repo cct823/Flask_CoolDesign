@@ -7,12 +7,12 @@ from project.countletters import countalpha
 
 countletters = Blueprint('countletters', __name__)
 UPLOAD__TEXT_FOLDER = '..'
-APP_ROOT= os.path.dirname(os.path.abspath(__file__))
+This_Folder= os.path.dirname(os.path.abspath(__file__)) + '/textfiles'
 
 # Used for uploading text files
 @countletters.route('/<filename>')
 def get_file(filename):
-    return send_from_directory('countletters/textfiles',filename)
+    return send_from_directory(This_Folder,filename)
 
 # count the letters in the text file
 @countletters.route('/countalpha', methods=['GET','POST'])
@@ -33,7 +33,7 @@ def count():
             filename = secure_filename(file.filename)
             # Create a path to the image in the upload folder, save the upload
             # file to this path
-            textfile = (os.path.join(project.config['UPLOAD__TEXT_FOLDER'], filename))
+            textfile = (os.path.join(This_Folder, filename))
             file.save(textfile)
             # print('this is:', save_old)
             output = countalpha.countletter(textfile)
