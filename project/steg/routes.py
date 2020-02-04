@@ -130,7 +130,7 @@ def desteg_file():
 
 '''If there are multiple upload folder,s extensions cound't be the same'''
 # allowed file types
-IMAGE_EXTENSIONS = {'png'}
+IMAGE_EXTENSIONS = {'png','jpg','jpeg'}
 project.config['IMAGE_EXTENSIONS']=IMAGE_EXTENSIONS
 
 # is file allowed to be uploaded?
