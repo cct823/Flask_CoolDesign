@@ -92,7 +92,7 @@
     <div id="five" class="section">
       <p>Print Striped Diamond</p>
       <form action="{{ url_for('arts.printStripedDiamond') }}" method="post">
-        NOTE: Try Width 7. It's easier to see.<br /><br />
+        NOTE: Try Width 7 or above. It's easier to see.<br /><br />
         Input Width:
         <input type="text" name="number" /><br /><br />
         Input Symbol 1:
@@ -110,7 +110,7 @@
         action="{{ url_for('arts.printCrazyStripedDiamond') }}"
         method="post"
       >
-        NOTE: Width > Sym1Width > Sym2Width <br /><br />
+        NOTE: Width > Sym1 Width > Sym2 Width <br /><br />
         Input Width:
         <input type="text" name="number" /><br /><br />
         Input Symbol 1:
@@ -129,7 +129,6 @@
     <div id="seven" class="section">
       <p>Print Basic Christmas Tree</p>
       <form action="{{ url_for('arts.printStarTree') }}" method="post">
-        NOTE: Height should be a odd number <br /><br />
         Input Height:
         <input type="text" name="number" /><br /><br />
         Input Symbol:
@@ -142,7 +141,8 @@
     <div id="eight" class="section">
       <p>Print Luxury Christmas Tree</p>
       <form action="{{ url_for('arts.printLuxuryTree') }}" method="post">
-        NOTE: Height should be a odd number <br /><br />
+        NOTE: Height should be an odd number and greater than 3. Suggested using
+        number greater than 5!!<br /><br />
         Input Height:
         <input type="text" name="number" /><br /><br />
         Input Symbol1:

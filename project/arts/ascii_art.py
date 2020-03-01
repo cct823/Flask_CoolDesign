@@ -135,9 +135,12 @@ def printStarTree(height,symbol):
     return output
 
 def printLuxuryTree(height, symbol1, symbol2):
+    n = int(height)
+    if n < 3:
+        n = 3
     output = []
     form = {}
-    n = int(height)
+    
 
     form['line'] = str(' ' * (n - 1) + '*')
     output.append(form)
