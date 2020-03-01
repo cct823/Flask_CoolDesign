@@ -123,3 +123,35 @@ def printCrazyStripedDiamond(width, sym1, sym2, sym1Width, sym2Width):
         # print(p[::-1])
     # print(output)
     return output
+
+def printStarTree(height,symbol):
+    n = int(height)
+    output = []
+    for i in range(1, n + 1):
+        form = {}
+        line = ' ' * (n - i) + symbol * (2 * i - 1)
+        form['line'] = line
+        output.append(form)
+    return output
+
+def printLuxuryTree(height, symbol1, symbol2):
+    output = []
+    form = {}
+    n = int(height)
+
+    form['line'] = str(' ' * (n - 1) + '*')
+    output.append(form)
+
+    for j in range(n - 2):
+        for i in range(3):
+            form1 = {}
+            line1 = ' ' * (n - i - j - 1) + symbol1 * (2 * (i + j) + 1)
+            form1['line']=line1
+            output.append(form1)
+    for k in range(n - 2):
+        form2 = {}
+        line2 = ' ' * ((n + 1) // 2) + symbol2 * (n - 2)
+        form2['line'] = line2
+        output.append(form2)
+
+    return output

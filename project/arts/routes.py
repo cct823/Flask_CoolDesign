@@ -38,7 +38,6 @@ def printBumps():
         symbol1 = request.form['symbol1']
         symbol2 = request.form['symbol2']
         output = ascii_art.printBumps(number, symbol1, symbol2)
-        # print(output)
         return render_template('ASCII_Results.html', title='ASCII Result', output=output)
 
 
@@ -51,9 +50,6 @@ def printDiamond():
         width = request.form['number']
         symbol = request.form['symbol']
         output = ascii_art.printDiamond(width, symbol)
-        # for item in output:
-        #     print(item['line'])
-        # print(output)
         return render_template('ASCII_Results.html', title='ASCII Result', output=output)
 
 
@@ -66,9 +62,6 @@ def printStripedDiamond():
         symbol1 = request.form['symbol1']
         symbol2 = request.form['symbol2']
         output = ascii_art.printStripedDiamond(width, symbol1,symbol2)
-        # for item in output:
-        #     print(item['line'])
-        # print(output)
         return render_template('ASCII_Results.html', title='ASCII Result', output=output)
 
 
@@ -84,7 +77,27 @@ def printCrazyStripedDiamond():
         sym1Width = request.form['sym1Width']
         sym2Width = request.form['sym2Width']
         output = ascii_art.printCrazyStripedDiamond(width, symbol1, symbol2, sym1Width, sym2Width)
-        # for item in output:
-        #     print(item['line'])
-        # print(output)
+        return render_template('ASCII_Results.html', title='ASCII Result', output=output)
+
+# Seventh Section
+@arts.route('/printStarTree', methods=['POST'])
+def printStarTree():
+
+    if request.method =='POST':
+        width = request.form['number']
+        symbol1 = request.form['symbol']
+        output = ascii_art.printStarTree(width, symbol1)
+        return render_template('ASCII_Results.html', title='ASCII Result', output=output)
+
+
+# Eighth Section
+@arts.route('/printLuxuryTree', methods=['POST'])
+
+def printLuxuryTree():
+    
+    if request.method =='POST':
+        width = request.form['number']
+        symbol1 = request.form['symbol1']
+        symbol2 = request.form['symbol2']
+        output = ascii_art.printLuxuryTree(width, symbol1, symbol2)
         return render_template('ASCII_Results.html', title='ASCII Result', output=output)
